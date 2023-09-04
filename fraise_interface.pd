@@ -1,0 +1,16 @@
+#N canvas 135 192 797 550 12;
+#X obj 11 12 fruit/fruit 1 motorX 20 motorX_fw;
+#X obj 220 13 dcmotor/motor motorX 120 motor;
+#X obj 39 135 fruit/send2 motorX;
+#X msg 111 110 WRITE;
+#X msg 112 285 WRITE;
+#X obj 40 310 fruit/send2 motorY;
+#X msg 113 464 WRITE;
+#X obj 12 187 fruit/fruit 1 motorY 21 motorY_fw;
+#X obj 41 489 fruit/send2 motorZ;
+#X obj 222 367 dcmotor/motor motorZ 120 motor;
+#X obj 221 188 dcmotor/motor motorY 120 motor;
+#X obj 13 366 fruit/fruit 1 motorZ 22 motorY_fw;
+#X connect 3 0 2 1;
+#X connect 4 0 5 1;
+#X connect 6 0 8 1;
