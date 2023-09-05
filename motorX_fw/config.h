@@ -4,8 +4,9 @@
 #define ANALOG_FILTER 3 
 
 #define MOTA_END KZ1
-#define MOTA_A KZ1
-#define MOTA_B KZ1
+#define MOTA_ENDLEVEL 0
+#define MOTA_A K11
+#define MOTA_B K12
 
 #endif // _CONFIG_H_
 

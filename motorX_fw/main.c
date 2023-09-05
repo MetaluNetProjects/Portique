@@ -14,6 +14,46 @@ t_delay mainDelay;
 
 DCMOTOR_DECLARE(A);
 
+//-------------  Timer1 macros :  ---------------------------------------- 
+//prescaler=PS fTMR1=FOSC/(4*PS) nbCycles=0xffff-TMR1init T=nbCycles/fTMR1=(0xffff-TMR1init)*4PS/FOSC
+//TMR1init=0xffff-(T*FOSC/4PS) ; max=65536*4PS/FOSC : 
+//ex: PS=8 : T=0.01s : TMR1init=0xffff-15000
+//Maximum 1s !!
+#define	TMR1init(T) (0xffff-((T*FOSC)/32000)) //ms ; maximum: 8MHz:262ms 48MHz:43ms 64MHz:32ms
+#define	TMR1initUS(T) (0xffff-((T*FOSC)/32000000)) //us ; 
+#define InitTimer(T) do{ TMR1H=TMR1init(T)/256 ; TMR1L=TMR1init(T)%256; PIR1bits.TMR1IF=0; }while(0)
+#define InitTimerUS(T) do{ TMR1H=TMR1initUS(T)/256 ; TMR1L=TMR1initUS(T)%256; PIR1bits.TMR1IF=0; }while(0)
+#define TimerOut() (PIR1bits.TMR1IF)
+
+void highInterrupts()
+{
+	if(PIR1bits.TMR1IF) {
+		DCMOTOR_CAPTURE_SERVICE(A);
+		InitTimerUS(50UL);
+	}
+}
+
+void sendMotorState()
+{
+	static unsigned char buf[20] = { 'B', 10};
+	static int ramppos;
+	static unsigned len;
+	
+	len = 2;
+	buf[len++] = DCMOTOR_GETPOS(A) >> 8;
+	buf[len++] = DCMOTOR_GETPOS(A) & 255;
+	buf[len++] = digitalRead(MOTA_END) == MOTA_ENDLEVEL;
+	buf[len++] = 0;//digitalRead(TRANS_HISW) == TRANS_SWLEVEL;
+	buf[len++] = DCMOTOR(A).Vars.PWMConsign >> 8;
+	buf[len++] = DCMOTOR(A).Vars.PWMConsign & 255;
+	ramppos = (int)rampGetPos(&(DCMOTOR(A).PosRamp));
+	buf[len++] = ramppos >> 8;
+	buf[len++] = ramppos & 255;
+	buf[len++] = DCMOTOR(A).VolVars.homed;
+	buf[len++] = '\n';
+	fraiseSend(buf,len);
+}
+
 void setup(void) {
 //----------- Setup ----------------
 	fruitInit();
@@ -30,9 +70,9 @@ void setup(void) {
 	dcmotorInit(A);
 
 	DCMOTOR(A).Setting.onlyPositive = 1;
-	DCMOTOR(A).Setting.PosWindow = 2;
-	DCMOTOR(A).Setting.PwmMin = 150;
-	DCMOTOR(A).Setting.PosErrorGain = 6;
+	DCMOTOR(A).Setting.PosWindow = 1;
+	DCMOTOR(A).Setting.PwmMin = 50;
+	DCMOTOR(A).Setting.PosErrorGain = 5;
 
 //#define HW_PARAMS
 #ifdef HW_PARAMS
@@ -51,8 +91,12 @@ void setup(void) {
 	EEreadMain();
 #endif
 
+	T1CON=0b00110011;//src=fosc/4,ps=8,16bit r/w,on.
+	PIE1bits.TMR1IE=1;  //1;
+	IPR1bits.TMR1IP=1;
 }
 
+int count;
 void loop() {
 // ---------- Main loop ------------
 	fraiseService();	// listen to Fraise events
@@ -63,6 +107,10 @@ void loop() {
 		delayStart(mainDelay, 5000); 	// re-init mainDelay
 		analogSend();		// send analog channels that changed
 		DCMOTOR_COMPUTE(A,SYM);
+		if(count++ > 10) {
+			count = 0;
+			sendMotorState();
+		}
 	}
 }
 
