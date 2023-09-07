@@ -1,0 +1,4 @@
+0 0 -1 none 2 début
+400 300 700 none 2 prendre conteneur sur camion
+1200 500 500 none 2 poser conteneur sur pile
+

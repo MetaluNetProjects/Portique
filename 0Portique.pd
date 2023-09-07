@@ -1,5 +1,6 @@
-#N canvas 338 175 509 530 12;
+#N canvas 284 165 307 286 12;
 #X declare -path Fraise;
 #X obj 11 9 declare -path Fraise;
 #X obj 11 32 pied/pied 0 34210;
-#X obj 184 40 fraise_interface;
+#X obj 11 108 fraise_interface;
+#X obj 13 142 sequence;
