@@ -13,7 +13,7 @@
 t_delay mainDelay;
 
 DCMOTOR_DECLARE(C);
-DCMOTOR_DECLARE(D);
+//DCMOTOR_DECLARE(D);
 //-------------  Timer1 macros :  ---------------------------------------- 
 //prescaler=PS fTMR1=FOSC/(4*PS) nbCycles=0xffff-TMR1init T=nbCycles/fTMR1=(0xffff-TMR1init)*4PS/FOSC
 //TMR1init=0xffff-(T*FOSC/4PS) ; max=65536*4PS/FOSC : 
@@ -47,7 +47,16 @@ void setup(void) {
 
 //----------- dcmotor setup ----------------
 	dcmotorInit(C);
-	dcmotorInit(D); // only for coil output
+	//dcmotorInit(D); // only for coil output
+	pinModeDigitalOut(K1);
+	digitalClear(K1);
+	
+	/*pinModeDigitalOut(MD1);
+	pinModeDigitalOut(MD2);
+	pinModeDigitalOut(MDEN);
+	digitalClear(MD1);
+	digitalClear(MD2);
+	digitalSet(MDEN);*/
 
 	pinModeDigitalIn(MOTC_NEAREND);
 	pinModeDigitalIn(MOTC_HIEND);
@@ -143,11 +152,12 @@ void fraiseReceiveChar() // receive text
 
 void fraiseReceive() // receive raw
 {
-	unsigned char c;
+	unsigned char c, c2;
 	c=fraiseGetChar();
 
 	switch(c) {
 		case 120 : DCMOTOR_INPUT(C) ; break;
+		case 140 : c2 = fraiseGetChar(); digitalWrite(MD1, c2 != 0); digitalWrite(K1, c2 != 0); break;
 	}
 }
 

@@ -43,7 +43,7 @@ void sendMotorState()
 	buf[len++] = DCMOTOR_GETPOS(A) >> 8;
 	buf[len++] = DCMOTOR_GETPOS(A) & 255;
 	buf[len++] = digitalRead(MOTA_END) == MOTA_ENDLEVEL;
-	buf[len++] = 0;//digitalRead(TRANS_HISW) == TRANS_SWLEVEL;
+	buf[len++] = digitalRead(MOTA_NEAREND) * 2 + digitalRead(MOTA_HIEND);
 	buf[len++] = DCMOTOR(A).Vars.PWMConsign >> 8;
 	buf[len++] = DCMOTOR(A).Vars.PWMConsign & 255;
 	ramppos = (int)rampGetPos(&(DCMOTOR(A).PosRamp));
@@ -68,6 +68,8 @@ void setup(void) {
 
 //----------- dcmotor setup ----------------
 	dcmotorInit(A);
+	pinModeDigitalIn(MOTA_NEAREND);
+	pinModeDigitalIn(MOTA_HIEND);
 
 	DCMOTOR(A).Setting.onlyPositive = 1;
 	DCMOTOR(A).Setting.PosWindow = 1;
