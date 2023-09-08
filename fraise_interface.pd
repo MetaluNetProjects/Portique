@@ -1,4 +1,4 @@
-#N canvas 478 315 792 550 12;
+#N canvas 201 372 792 550 12;
 #X obj 11 12 fruit/fruit 1 motorX 20 motorX_fw;
 #X obj 220 13 dcmotor/motor motorX 120 motor;
 #X obj 79 142 fruit/send2 motorX;
@@ -108,7 +108,7 @@
 #X text 193 437 destination in mm:;
 #X msg 370 431 100;
 #X obj 18 583 hsl 900 15 0 2 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 40770 1;
+-1 -1 53940 1;
 #X obj 637 485 change;
 #X obj 477 502 timer;
 #X obj 459 458 b;
@@ -116,7 +116,7 @@
 -1 -1;
 #X floatatom 477 527 7 0 0 0 - - -;
 #X obj 18 562 hsl 900 15 0 2 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 26300 1;
+-1 -1 0 1;
 #X obj 61 517 * 1000;
 #X msg 639 324 1;
 #X text 699 434 theoric precision 0.4mm;
@@ -134,9 +134,9 @@
 #X floatatom 952 464 5 0 0 0 - - -;
 #X obj 952 488 s axisGotoX;
 #X obj 51 669 hsl 900 15 0 2000 0 0 empty axisRampPosX empty -2 -8
-0 10 -262144 -1 -1 16317 1;
+0 10 -262144 -1 -1 53944 1;
 #X obj 51 648 hsl 900 15 0 2000 0 0 axisGotoX empty empty -2 -8 0 10
--262144 -1 -1 40800 1;
+-262144 -1 -1 0 1;
 #X obj 51 688 hsl 900 15 0 2000 0 0 empty axisPosX empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X connect 1 0 0 0;
@@ -216,7 +216,7 @@
 #X connect 83 0 73 0;
 #X connect 86 0 87 0;
 #X restore 11 61 pd test-X;
-#N canvas 787 537 1076 624 test-Y 1;
+#N canvas 787 537 1076 624 test-Y 0;
 #X msg 39 101 c 120 c 4 i \$1;
 #X obj 42 69 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
@@ -257,7 +257,7 @@
 #X obj 631 195 tgl 15 0 empty empty hiSw 0 23 0 10 -262144 -1 -1 1
 1;
 #X obj 864 104 list split 1;
-#X obj 864 133 tgl 15 0 empty empty homed 0 23 0 10 -262144 -1 -1 0
+#X obj 864 133 tgl 15 0 empty empty homed 0 23 0 10 -262144 -1 -1 1
 1;
 #N canvas 856 392 450 300 (subpatch) 0;
 #X obj 37 11 inlet;
@@ -294,7 +294,7 @@
 #X msg 369 317 2000;
 #X obj 245 317 print;
 #X obj 614 286 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 6350 1;
 #X msg 336 317 800;
 #X obj 629 382 * 3.14159;
 #X text 678 409 wheel diameter in mm;
@@ -308,7 +308,7 @@
 #X text 193 437 destination in mm:;
 #X msg 370 431 100;
 #X obj 18 583 hsl 900 15 0 0.8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 56075 1;
 #X obj 637 485 change;
 #X obj 477 502 timer;
 #X obj 459 458 b;
@@ -444,10 +444,10 @@
 #X restore 12 237 pd test-Y;
 #X text 181 439 5200;
 #X obj 13 366 fruit/fruit 1 motorZ 22 motorZ_fw;
-#N canvas 534 95 1076 624 test-Z 0;
+#N canvas 482 95 1076 624 test-Z 1;
 #X msg 39 101 c 120 c 4 i \$1;
 #X obj 42 69 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 6350 1;
+-262144 -1 -1 0 1;
 #X msg 39 34 0;
 #X obj 244 28 analog/parse;
 #X obj 244 53 route 0;
@@ -536,7 +536,7 @@
 #X text 193 437 destination in mm:;
 #X msg 370 431 100;
 #X obj 18 583 hsl 900 15 0 0.8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 33713 1;
 #X obj 637 485 change;
 #X obj 477 502 timer;
 #X obj 459 458 b;
@@ -544,7 +544,7 @@
 -1 -1;
 #X floatatom 477 527 7 0 0 0 - - -;
 #X obj 18 562 hsl 900 15 0 0.8 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 89900 1;
+-1 -1 0 1;
 #X obj 61 517 * 1000;
 #X msg 639 324 1;
 #X obj 904 130 list split 1;
@@ -582,6 +582,7 @@
 #X obj 83 176 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 674 355 560 steps/tour (32steps*reduct70/4);
+#X obj 113 175 r Zcoil;
 #X connect 0 0 89 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
@@ -674,6 +675,7 @@
 #X connect 97 0 88 0;
 #X connect 98 0 89 0;
 #X connect 99 0 98 0;
+#X connect 101 0 99 0;
 #X restore 14 417 pd test-Z;
 #X obj 11 85 motorState X 1 800 100;
 #X obj 12 261 motorState Y 4 800 40;
