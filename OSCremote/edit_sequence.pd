@@ -1,4 +1,4 @@
-#N canvas 1017 174 421 220 10;
+#N canvas 965 174 443 220 10;
 #X obj 125 16 movement_axis \$0 X x;
 #X obj 125 39 movement_axis \$0 Y y;
 #X obj 125 62 movement_axis \$0 Z z;
@@ -87,7 +87,7 @@
 #X connect 40 0 39 0;
 #X connect 40 0 41 0;
 #X restore 125 92 pd xyz_manual;
-#N canvas 615 232 556 547 navigation 0;
+#N canvas 1170 293 556 547 navigation 0;
 #X obj 38 12 r fromRemote;
 #X obj 38 35 route movement_prev movement_next;
 #X msg 38 58 -1;
@@ -116,13 +116,13 @@
 #X msg 138 453 1;
 #X msg 168 453 0;
 #X obj 138 481 s \$0-release;
-#X msg 410 218 movement_count \$1;
+#X msg 410 176 movement_count \$1;
 #X obj 292 247 s toRemote;
-#X floatatom 410 192 5 0 0 0 - - -;
-#X floatatom 292 174 5 0 0 0 - - -;
-#X obj 292 150 r \$0-currentmove;
-#X msg 292 218 movement_num \$1;
-#X obj 292 196 + 1;
+#X floatatom 410 150 5 0 0 0 - - -;
+#X floatatom 292 132 5 0 0 0 - - -;
+#X obj 292 108 r \$0-currentmove;
+#X msg 292 176 movement_num \$1;
+#X obj 292 154 + 1;
 #X obj 415 299 r Sequence-size;
 #X obj 402 336 b;
 #X obj 402 359 del 1;
@@ -130,7 +130,9 @@
 #X obj 402 405 f;
 #X obj 402 427 s \$0-currentmove;
 #X obj 83 134 r Sequence-size;
-#X obj 410 168 r Sequence-size;
+#X obj 410 126 r Sequence-size;
+#X obj 292 211 refresh;
+#X obj 351 211 refresh;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -155,11 +157,11 @@
 #X connect 24 1 26 0;
 #X connect 25 0 27 0;
 #X connect 26 0 27 0;
-#X connect 28 0 29 0;
+#X connect 28 0 44 0;
 #X connect 30 0 28 0;
 #X connect 31 0 34 0;
 #X connect 32 0 31 0;
-#X connect 33 0 29 0;
+#X connect 33 0 43 0;
 #X connect 34 0 33 0;
 #X connect 36 0 37 0;
 #X connect 37 0 39 0;
@@ -167,6 +169,8 @@
 #X connect 39 0 40 0;
 #X connect 41 0 8 0;
 #X connect 42 0 30 0;
+#X connect 43 0 29 0;
+#X connect 44 0 29 0;
 #X restore 16 15 pd navigation;
 #N canvas 425 695 544 359 comment 0;
 #X obj 42 207 s toRemoteDirect;

@@ -1,4 +1,4 @@
-#N canvas 541 213 593 447 10;
+#N canvas 489 212 593 447 10;
 #X obj 33 30 netreceive -u -b 18080;
 #X obj 33 50 oscparse;
 #X obj 32 277 netsend -u -b;
@@ -13,7 +13,7 @@
 #X obj 33 70 list trim;
 #X obj 220 97 spigot;
 #X obj 220 120 print;
-#X obj 271 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 271 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 352 329 0;
 #X msg 383 328 1;
@@ -29,6 +29,13 @@
 #X obj 374 236 remote_server;
 #X obj 460 157 edit_sequence;
 #X obj 375 263 homing;
+#X obj 157 353 s OSCrefresh;
+#X obj 110 357 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 157 331 metro 2000;
+#X obj 157 284 loadbang;
+#X obj 157 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 2 0 5 0;
@@ -48,3 +55,7 @@
 #X connect 19 0 9 0;
 #X connect 20 0 11 0;
 #X connect 22 0 2 0;
+#X connect 29 0 28 0;
+#X connect 30 0 28 0;
+#X connect 31 0 32 0;
+#X connect 32 0 30 0;

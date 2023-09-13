@@ -1,4 +1,4 @@
-#N canvas 597 142 1060 652 12;
+#N canvas 545 142 1060 652 12;
 #X obj 27 34 route 10;
 #X obj 27 59 list split 2;
 #X obj 120 58 list split 2;
@@ -22,7 +22,7 @@
 #X obj 170 148 tgl 15 0 empty empty hiSw 0 23 0 10 -262144 -1 -1 0
 1;
 #X obj 403 57 list split 1;
-#X obj 403 86 tgl 15 0 empty empty homed 0 23 0 10 -262144 -1 -1 1
+#X obj 403 86 tgl 15 0 empty empty homed 0 23 0 10 -262144 -1 -1 0
 1;
 #N canvas 856 392 450 300 (subpatch) 0;
 #X obj 37 37 inlet;
@@ -51,7 +51,7 @@
 #X connect 5 0 1 0;
 #X restore 27 162 pd;
 #X obj 218 243 hsl 128 15 -1023 1023 0 0 empty empty empty -2 -8 0
-10 -262144 -1 -1 12700 1;
+10 -262144 -1 -1 6350 1;
 #X obj 137 120 >> 1;
 #X obj 171 121 mod 2;
 #X obj 131 146 tgl 15 0 empty empty nearSw 0 23 0 10 -262144 -1 -1
@@ -69,7 +69,7 @@
 #X obj 322 332 t b f;
 #X obj 310 603 s axisArrived\$1;
 #X obj 310 470 change;
-#X obj 288 607 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 288 607 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 322 306 route dest;
 #X obj 322 281 r motor\$1-motor-ramp-params;
@@ -114,7 +114,9 @@
 #X obj 493 501 sel 1;
 #X msg 925 366 c 130 c 0;
 #X obj 925 339 r axisStop\$1;
-#X obj 586 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 586 105 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 760 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
@@ -206,3 +208,4 @@
 #X connect 82 0 81 0;
 #X connect 83 0 77 0;
 #X connect 84 0 83 0;
+#X connect 86 0 67 0;

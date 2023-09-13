@@ -1,4 +1,4 @@
-#N canvas 597 118 970 413 10;
+#N canvas 441 118 970 493 10;
 #X obj 59 170 r axisReadyX;
 #X obj 188 170 r axisReadyYZ;
 #X msg 59 242 zerox_window \$1;
@@ -62,12 +62,22 @@
 #X msg 796 149 0;
 #X obj 283 278 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 26 264 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 26 264 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 141 282 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 18 107 loadbang;
 #X obj 18 130 del 3000;
+#X obj 139 347 r axisReadyX;
+#X obj 139 370 == 0;
+#X obj 139 393 metro 2000;
+#X obj 282 334 r fromRemote;
+#X obj 282 357 route zerox_window;
+#X obj 282 380 sel 0;
+#X obj 139 416 spigot 1;
+#X msg 200 417 0;
+#X obj 67 386 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 9 0;
 #X connect 0 0 11 0;
 #X connect 0 0 56 0;
@@ -131,3 +141,13 @@
 #X connect 54 0 29 0;
 #X connect 58 0 59 0;
 #X connect 59 0 9 0;
+#X connect 59 0 61 0;
+#X connect 60 0 61 0;
+#X connect 61 0 62 0;
+#X connect 62 0 66 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 65 0 67 0;
+#X connect 66 0 9 0;
+#X connect 67 0 66 1;
+#X connect 68 0 61 0;
