@@ -109,6 +109,7 @@ void sendMotorState()
 }
 
 int count;
+byte endSwitchOn;
 
 void loop() {
 // ---------- Main loop ------------
@@ -119,6 +120,12 @@ void loop() {
 	{
 		delayStart(mainDelay, 5000); 	// re-init mainDelay
 		//analogSend();		// send analog channels that changed
+		if(digitalRead(MOTC_END) == MOTC_ENDLEVEL) {
+			if(!endSwitchOn) {
+				endSwitchOn = 1;
+				rampInit(&(DCMOTOR(C).PosRamp));
+			}
+		} else endSwitchOn = 0;
 		DCMOTOR_COMPUTE(C, ASYM);
 		if(count++ > 10) {
 			count = 0;
@@ -157,6 +164,7 @@ void fraiseReceive() // receive raw
 
 	switch(c) {
 		case 120 : DCMOTOR_INPUT(C) ; break;
+		case 130 : rampStop(&(DCMOTOR(C).PosRamp)); break;
 		case 140 : c2 = fraiseGetChar(); digitalWrite(MD1, c2 != 0); digitalWrite(K1, c2 != 0); break;
 	}
 }

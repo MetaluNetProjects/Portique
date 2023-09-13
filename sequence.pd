@@ -1,4 +1,4 @@
-#N canvas 2324 616 1095 707 12;
+#N canvas 650 242 1095 707 12;
 #X obj 71 126 text define Sequence;
 #X msg 71 98 read -c Sequence.txt;
 #X obj 42 259 text get Sequence;
@@ -32,11 +32,11 @@
 #X obj 177 222 hradio 15 1 0 12 \$0-readStep \$0-readStep readStep
 0 -8 0 10 -262144 -1 -1 1;
 #X obj 45 509 hsl 500 15 0 2000 0 0 empty axisRampPosX X -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 7486 1;
 #X obj 45 526 hsl 500 15 0 800 0 0 empty axisRampPosY Y -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 16527 1;
 #X obj 45 543 hsl 500 15 0 800 0 0 empty axisRampPosZ Z -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 33754 1;
 #X obj 609 47 t b b;
 #X obj 609 72 i;
 #X msg 655 46 0;
@@ -62,8 +62,8 @@
 #X restore 244 286 pd stepIsValid;
 #X obj 609 200 f;
 #X obj 609 225 sel 1 0;
-#X obj 437 60 r SequencePlay;
-#X obj 469 83 r SequenceFinished;
+#X obj 434 22 r SequencePlay;
+#X obj 485 56 r SequenceFinished;
 #X obj 437 108 timer;
 #X obj 437 133 / 1000;
 #X floatatom 437 158 5 0 0 0 - - -;
@@ -138,6 +138,20 @@
 #X floatatom 157 175 5 0 0 0 - - -;
 #X obj 233 74 r SequenceSave;
 #X msg 233 100 write -c Sequence.txt;
+#X obj 497 128 r SequenceComment;
+#X obj 497 153 t a b;
+#X msg 499 198 start;
+#X msg 548 197 finish;
+#X obj 418 227 spigot;
+#X obj 470 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 526 294 i;
+#X obj 418 258 list prepend ---;
+#X obj 418 294 list prepend 0;
+#X msg 526 231 0;
+#X obj 434 53 t b b;
+#X obj 485 82 t b b;
+#X obj 418 331 print;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;
 #X connect 3 0 5 0;
@@ -180,10 +194,11 @@
 #X connect 44 0 45 0;
 #X connect 45 0 21 0;
 #X connect 45 1 25 0;
-#X connect 46 0 48 0;
-#X connect 47 0 48 1;
+#X connect 46 0 97 0;
+#X connect 47 0 98 0;
 #X connect 48 0 49 0;
 #X connect 49 0 50 0;
+#X connect 49 0 93 0;
 #X connect 53 0 44 1;
 #X connect 53 0 52 0;
 #X connect 54 0 55 0;
@@ -202,7 +217,6 @@
 #X connect 69 0 74 0;
 #X connect 70 0 69 0;
 #X connect 71 0 19 0;
-#X connect 71 0 69 0;
 #X connect 72 0 24 0;
 #X connect 72 0 81 1;
 #X connect 79 0 81 0;
@@ -210,3 +224,19 @@
 #X connect 80 0 72 0;
 #X connect 85 0 86 0;
 #X connect 86 0 0 0;
+#X connect 87 0 88 0;
+#X connect 88 0 91 0;
+#X connect 88 1 48 1;
+#X connect 89 0 91 0;
+#X connect 90 0 91 0;
+#X connect 91 0 94 0;
+#X connect 92 0 91 1;
+#X connect 93 0 95 1;
+#X connect 94 0 95 0;
+#X connect 95 0 99 0;
+#X connect 96 0 93 0;
+#X connect 97 0 89 0;
+#X connect 97 1 48 0;
+#X connect 97 1 96 0;
+#X connect 98 0 90 0;
+#X connect 98 1 48 1;

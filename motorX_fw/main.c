@@ -98,7 +98,19 @@ void setup(void) {
 	IPR1bits.TMR1IP=1;
 }
 
+#define DCMOTOR_UPDATE_SYM_PROTECT_(motID) do{ \
+	DCMOTOR_FORMATPWM(motID);\
+	if((dcmotor_v < 0) && (digitalRead(MOT##motID##_END) == MOT##motID##_ENDLEVEL)) dcmotor_v = 0; \
+	if((dcmotor_v > 0) && (digitalRead(MOT##motID##_HIEND) == MOT##motID##_ENDLEVEL)) dcmotor_v = 0; \
+	dcmotor_vabs = dcmotor_v < 0 ? -dcmotor_v : dcmotor_v; \
+	SET_PWM(MOT##motID##_PWM, dcmotor_vabs); \
+	if(dcmotor_v < 0) { digitalClear(M##motID##1);digitalSet(M##motID##2);}\
+	else { digitalClear(M##motID##2); digitalSet(M##motID##1);}\
+ } while(0)
+#define DCMOTOR_UPDATE_SYM_PROTECT(motID) CALL_FUN(DCMOTOR_UPDATE_SYM_PROTECT_,motID)
+
 int count;
+byte endSwitchOn;
 void loop() {
 // ---------- Main loop ------------
 	fraiseService();	// listen to Fraise events
@@ -108,7 +120,13 @@ void loop() {
 	{
 		delayStart(mainDelay, 5000); 	// re-init mainDelay
 		analogSend();		// send analog channels that changed
-		DCMOTOR_COMPUTE(A,SYM);
+		if(digitalRead(MOTA_END) == MOTA_ENDLEVEL) {
+			if(!endSwitchOn) {
+				endSwitchOn = 1;
+				rampInit(&(DCMOTOR(A).PosRamp));
+			}
+		} else endSwitchOn = 0;
+		DCMOTOR_COMPUTE(A, SYM_PROTECT);
 		if(count++ > 10) {
 			count = 0;
 			sendMotorState();
@@ -146,6 +164,7 @@ void fraiseReceive() // receive raw
 
 	switch(c) {
 		case 120 : DCMOTOR_INPUT(A) ; break;
+		case 130 : rampStop(&(DCMOTOR(A).PosRamp)); break;
 	}
 }
 

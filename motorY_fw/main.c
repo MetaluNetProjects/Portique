@@ -53,7 +53,7 @@ void setup(void) {
 	pinModeDigitalIn(MOTC_HIEND);
 
 	DCMOTOR(C).Setting.onlyPositive = 1;
-	DCMOTOR(C).Setting.PosWindow = 10;
+	DCMOTOR(C).Setting.PosWindow = 15;
 	DCMOTOR(C).Setting.PwmMin = 100;
 	DCMOTOR(C).Setting.PosErrorGain = 5;
 
@@ -99,7 +99,19 @@ void sendMotorState()
 	fraiseSend(buf,len);
 }
 
+#define DCMOTOR_UPDATE_ASYM_PROTECT_(motID) do{ \
+	DCMOTOR_FORMATPWM(motID);\
+	if((dcmotor_v < 0) && (digitalRead(MOT##motID##_END) == MOT##motID##_ENDLEVEL)) dcmotor_v = 0; \
+	if((dcmotor_v > 0) && (digitalRead(MOT##motID##_HIEND) == MOT##motID##_ENDLEVEL)) dcmotor_v = 0; \
+	dcmotor_vabs = dcmotor_v < 0 ? 1023 + dcmotor_v : dcmotor_v; \
+	SET_PWM(MOT##motID##_PWM, dcmotor_vabs); \
+	if(dcmotor_v < 0) { digitalSet(M##motID##2);}\
+	else { digitalClear(M##motID##2);}\
+ } while(0)
+#define DCMOTOR_UPDATE_ASYM_PROTECT(motID) CALL_FUN(DCMOTOR_UPDATE_ASYM_PROTECT_,motID)
+
 int count;
+byte endSwitchOn;
 
 void loop() {
 // ---------- Main loop ------------
@@ -110,7 +122,13 @@ void loop() {
 	{
 		delayStart(mainDelay, 5000); 	// re-init mainDelay
 		//analogSend();		// send analog channels that changed
-		DCMOTOR_COMPUTE(C, ASYM);
+		if(digitalRead(MOTC_END) == MOTC_ENDLEVEL) {
+			if(!endSwitchOn) {
+				endSwitchOn = 1;
+				rampInit(&(DCMOTOR(C).PosRamp));
+			}
+		} else endSwitchOn = 0;
+		DCMOTOR_COMPUTE(C, ASYM_PROTECT);
 		if(count++ > 10) {
 			count = 0;
 			sendMotorState();
@@ -148,6 +166,7 @@ void fraiseReceive() // receive raw
 
 	switch(c) {
 		case 120 : DCMOTOR_INPUT(C) ; break;
+		case 130 : rampStop(&(DCMOTOR(C).PosRamp)); break;
 	}
 }
 

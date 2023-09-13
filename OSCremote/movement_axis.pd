@@ -1,4 +1,4 @@
-#N canvas 2090 906 513 342 10;
+#N canvas 965 617 513 342 10;
 #X declare -path ..;
 #X obj 47 15 r fromRemote;
 #X obj 19 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -28,6 +28,7 @@
 #X obj 213 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 322 17 for clipX clipY clipZ ...;
+#X obj 277 142 s \$1-autosave;
 #X connect 0 0 3 0;
 #X connect 2 0 1 0;
 #X connect 2 0 14 0;
@@ -49,4 +50,5 @@
 #X connect 19 1 23 0;
 #X connect 20 0 22 1;
 #X connect 22 0 21 0;
+#X connect 22 0 25 0;
 #X connect 23 0 22 0;
