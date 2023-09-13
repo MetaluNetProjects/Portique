@@ -1,4 +1,4 @@
-#N canvas 905 549 896 364 10;
+#N canvas 853 549 896 364 10;
 #X obj 121 31 r fromRemote;
 #X obj 121 54 route start_button emergency_stop_button;
 #X obj 397 108 r SequenceComment;

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+node /mnt/mmcblk0p2/App/open-stage-control-1.8.15-node/index.js $@
+#node /mnt/mmcblk0p2/App/open-stage-control_1.25.0_node/index.js $@
+

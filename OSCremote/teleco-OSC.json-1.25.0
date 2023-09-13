@@ -1,5 +1,8 @@
 {
-  "session": {
+  "version": "1.25.0",
+  "type": "session",
+  "createdWith": "Open Stage Control",
+  "content": {
     "type": "root",
     "id": "root",
     "linkId": "",
@@ -31,7 +34,6 @@
         "contain": true,
         "scroll": true,
         "innerPadding": true,
-        "verticalTabs": false,
         "label": "auto",
         "variables": "@{parent.variables}",
         "traversing": false,
@@ -45,7 +47,6 @@
         "target": "",
         "ignoreDefaults": false,
         "bypass": false,
-        "script": "",
         "widgets": [
           {
             "type": "modal",
@@ -66,7 +67,6 @@
             "alphaFillOn": "auto",
             "lineWidth": "auto",
             "padding": "auto",
-            "html": "",
             "css": "",
             "label": "JS{{\n   var sy = \"OK\"\n   if(!@{y_is_connected}) sy = \"NOT CONNECTED\"\n   else if(!@{y_is_homed}) sy = \"NOT HOMED\"\n\n   var sz = \"OK\"\n   if(!@{z_is_connected}) sz = \"NOT CONNECTED\"\n   else if(!@{z_is_homed}) sz = \"NOT HOMED\"\n\n   return \"AXIS Y: \" + sy + \"\\n\\nAXIS Z: \" + sz\n}}",
             "doubleTap": true,
@@ -80,7 +80,6 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "popupWidth": "80%",
             "popupHeight": "80%",
             "popupLeft": "auto",
@@ -131,14 +130,19 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "z_is_connected",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -179,7 +183,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -220,7 +229,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -254,14 +268,19 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "y_is_connected",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -295,14 +314,19 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "y_is_homed",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -336,17 +360,28 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "z_is_homed",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               }
             ],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "modal",
@@ -367,7 +402,6 @@
             "alphaFillOn": "auto",
             "lineWidth": "auto",
             "padding": "auto",
-            "html": "",
             "css": "",
             "label": "JS{{\n   var s = \"OK\"\n   if(!@{x_is_connected}) s = \"NOT CONNECTED\"\n   else if(!@{x_is_homed}) s = \"NOT HOMED\"\n   return \"AXIS X: \" + s\n}}",
             "doubleTap": true,
@@ -381,7 +415,6 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "popupWidth": "80%",
             "popupHeight": "80%",
             "popupLeft": "auto",
@@ -432,14 +465,19 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "x_is_connected",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -480,7 +518,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -521,7 +564,12 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -555,17 +603,28 @@
                 "value": "",
                 "default": "",
                 "linkId": "",
-                "address": "/current",
-                "preArgs": "x_is_homed",
+                "address": "auto",
+                "preArgs": "",
                 "typeTags": "",
                 "decimals": 2,
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               }
             ],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "modal",
@@ -586,7 +645,6 @@
             "alphaFillOn": "auto",
             "lineWidth": "auto",
             "padding": "auto",
-            "html": "",
             "css": "",
             "label": "SETTINGS",
             "doubleTap": true,
@@ -600,7 +658,6 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": "",
             "popupWidth": "100%",
             "popupHeight": "100%",
             "popupLeft": "auto",
@@ -637,7 +694,6 @@
                 "alphaFillOn": "auto",
                 "lineWidth": "auto",
                 "padding": "auto",
-                "html": "",
                 "css": "",
                 "value": "",
                 "default": "",
@@ -646,7 +702,6 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": "",
                 "interaction": true,
                 "popupWidth": "100%",
                 "popupHeight": "100%",
@@ -710,7 +765,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -751,7 +811,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -792,7 +857,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "text",
@@ -824,7 +894,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "text",
@@ -856,7 +930,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "text",
@@ -888,7 +966,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -929,7 +1011,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -970,7 +1057,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "modal",
@@ -997,7 +1089,6 @@
                     "alphaFillOn": "auto",
                     "lineWidth": "auto",
                     "padding": "auto",
-                    "html": "",
                     "css": "",
                     "colorBg": "auto",
                     "layout": "default",
@@ -1022,7 +1113,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "widgets": [
                       {
                         "type": "button",
@@ -1063,10 +1153,21 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       }
                     ],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   },
                   {
                     "type": "panel",
@@ -1096,7 +1197,6 @@
                     "contain": true,
                     "scroll": true,
                     "innerPadding": true,
-                    "verticalTabs": false,
                     "variables": {
                       "axis": "X"
                     },
@@ -1111,7 +1211,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "widgets": [
                       {
                         "type": "button",
@@ -1152,7 +1251,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "text",
@@ -1184,7 +1288,11 @@
                         "preArgs": "",
                         "decimals": 2,
                         "target": "",
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1225,7 +1333,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1266,7 +1379,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1307,7 +1425,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1348,7 +1471,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1389,7 +1517,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "text",
@@ -1421,7 +1554,11 @@
                         "preArgs": "current",
                         "decimals": 2,
                         "target": "",
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1462,7 +1599,12 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       },
                       {
                         "type": "button",
@@ -1503,10 +1645,21 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "decoupled": false,
+                        "onCreate": ""
                       }
                     ],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   },
                   {
                     "type": "clone",
@@ -1525,7 +1678,8 @@
                         "axis": "Y"
                       }
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1546,7 +1700,8 @@
                         "axis": "Z"
                       }
                     },
-                    "script": "",
+                    "lock": false,
+                    "comments": "",
                     "address": "auto",
                     "variables": "@{parent.variables}"
                   },
@@ -1589,7 +1744,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "input",
@@ -1626,7 +1786,13 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "numeric": false,
+                    "maxLength": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -1667,7 +1833,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "xy",
@@ -1717,7 +1888,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "xy",
@@ -1767,7 +1943,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "fader",
@@ -1817,7 +1998,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "fader",
@@ -1867,7 +2053,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": "",
+                    "onTouch": ""
                   },
                   {
                     "type": "button",
@@ -1908,7 +2099,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "text",
@@ -1929,7 +2125,7 @@
                     "lineWidth": "auto",
                     "padding": "auto",
                     "html": "",
-                    "css": "font-size: 120%;",
+                    "css": "font-size: 140%;",
                     "vertical": false,
                     "wrap": false,
                     "align": "center",
@@ -1940,7 +2136,11 @@
                     "preArgs": "",
                     "decimals": 2,
                     "target": "",
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "onCreate": ""
                   },
                   {
                     "type": "button",
@@ -1981,7 +2181,12 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "decoupled": false,
+                    "onCreate": ""
                   },
                   {
                     "type": "input",
@@ -2018,7 +2223,13 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": ""
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "numeric": false,
+                    "maxLength": "",
+                    "onCreate": ""
                   },
                   {
                     "type": "modal",
@@ -2039,7 +2250,6 @@
                     "alphaFillOn": "auto",
                     "lineWidth": "auto",
                     "padding": "auto",
-                    "html": "",
                     "css": "",
                     "label": "BACKUP\n\nSAVE / LOAD",
                     "doubleTap": false,
@@ -2053,7 +2263,6 @@
                     "target": "",
                     "ignoreDefaults": false,
                     "bypass": false,
-                    "script": "",
                     "popupWidth": "80%",
                     "popupHeight": "80%",
                     "popupLeft": "auto",
@@ -2109,7 +2318,11 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": ""
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "onCreate": ""
                       },
                       {
                         "type": "input",
@@ -2142,17 +2355,35 @@
                         "target": "",
                         "ignoreDefaults": false,
                         "bypass": false,
-                        "script": "",
                         "align": "center",
                         "unit": "",
                         "asYouType": false,
-                        "validation": ""
+                        "validation": "",
+                        "onValue": "",
+                        "lock": false,
+                        "comments": "",
+                        "borderRadius": "auto",
+                        "numeric": false,
+                        "maxLength": "",
+                        "onCreate": ""
                       }
                     ],
-                    "tabs": []
+                    "tabs": [],
+                    "onValue": "",
+                    "lock": false,
+                    "comments": "",
+                    "borderRadius": "auto",
+                    "tabsPosition": "top",
+                    "onCreate": ""
                   }
                 ],
-                "tabs": []
+                "tabs": [],
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "tabsPosition": "top",
+                "onCreate": ""
               },
               {
                 "type": "text",
@@ -2182,9 +2413,13 @@
                 "preArgs": "",
                 "decimals": 2,
                 "target": "",
-                "script": "",
                 "vertical": false,
-                "wrap": false
+                "wrap": false,
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "onCreate": ""
               },
               {
                 "type": "input",
@@ -2217,11 +2452,17 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": "",
                 "align": "center",
                 "unit": "",
                 "asYouType": false,
-                "validation": ""
+                "validation": "",
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "numeric": false,
+                "maxLength": "",
+                "onCreate": ""
               },
               {
                 "type": "button",
@@ -2262,10 +2503,21 @@
                 "target": "",
                 "ignoreDefaults": false,
                 "bypass": false,
-                "script": ""
+                "onValue": "",
+                "lock": false,
+                "comments": "",
+                "borderRadius": "auto",
+                "decoupled": false,
+                "onCreate": ""
               }
             ],
-            "tabs": []
+            "tabs": [],
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "tabsPosition": "top",
+            "onCreate": ""
           },
           {
             "type": "fader",
@@ -2315,7 +2567,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": "",
+            "onTouch": ""
           },
           {
             "type": "xy",
@@ -2365,7 +2622,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": "",
+            "onTouch": ""
           },
           {
             "type": "text",
@@ -2397,7 +2659,11 @@
             "preArgs": "",
             "decimals": 2,
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -2438,7 +2704,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "text",
@@ -2470,7 +2741,11 @@
             "preArgs": "comment",
             "decimals": 2,
             "target": "",
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -2511,7 +2786,12 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           },
           {
             "type": "button",
@@ -2552,10 +2832,21 @@
             "target": "",
             "ignoreDefaults": false,
             "bypass": false,
-            "script": ""
+            "onValue": "",
+            "lock": false,
+            "comments": "",
+            "borderRadius": "auto",
+            "decoupled": false,
+            "onCreate": ""
           }
         ],
-        "tabs": []
+        "tabs": [],
+        "onValue": "",
+        "lock": false,
+        "comments": "",
+        "borderRadius": "auto",
+        "tabsPosition": "top",
+        "onCreate": ""
       }
     ],
     "scroll": true,
@@ -2575,12 +2866,15 @@
     "gridTemplate": "",
     "contain": true,
     "innerPadding": true,
-    "verticalTabs": false,
     "typeTags": "",
     "ignoreDefaults": false,
-    "script": "",
-    "widgets": []
-  },
-  "version": "1.8.15",
-  "type": "Open Stage Control session"
+    "widgets": [],
+    "onValue": "",
+    "lock": false,
+    "comments": "",
+    "borderRadius": "auto",
+    "tabsPosition": "top",
+    "hideMenu": false,
+    "onCreate": ""
+  }
 }
