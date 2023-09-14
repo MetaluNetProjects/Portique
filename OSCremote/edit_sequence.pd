@@ -1,8 +1,8 @@
-#N canvas 965 174 443 220 10;
+#N canvas 395 145 443 220 10;
 #X obj 125 16 movement_axis \$0 X x;
 #X obj 125 39 movement_axis \$0 Y y;
 #X obj 125 62 movement_axis \$0 Z z;
-#N canvas 267 157 855 414 xyz_manual 0;
+#N canvas 215 157 855 414 xyz_manual 0;
 #X obj 107 241 s toRemoteDirect;
 #X obj 107 194 list;
 #X msg 235 158 z \$1;
@@ -87,7 +87,7 @@
 #X connect 40 0 39 0;
 #X connect 40 0 41 0;
 #X restore 125 92 pd xyz_manual;
-#N canvas 1170 293 556 547 navigation 0;
+#N canvas 1118 293 556 547 navigation 1;
 #X obj 38 12 r fromRemote;
 #X obj 38 35 route movement_prev movement_next;
 #X msg 38 58 -1;
@@ -133,6 +133,7 @@
 #X obj 410 126 r Sequence-size;
 #X obj 292 211 refresh;
 #X obj 351 211 refresh;
+#X obj 235 258 print;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -170,9 +171,10 @@
 #X connect 41 0 8 0;
 #X connect 42 0 30 0;
 #X connect 43 0 29 0;
+#X connect 43 0 45 0;
 #X connect 44 0 29 0;
 #X restore 16 15 pd navigation;
-#N canvas 425 695 544 359 comment 0;
+#N canvas 269 695 544 359 comment 0;
 #X obj 42 207 s toRemoteDirect;
 #X obj 42 108 fudiformat -u;
 #X obj 42 131 list tosymbol;
@@ -269,7 +271,7 @@
 #X connect 29 0 30 1;
 #X connect 30 0 31 0;
 #X restore 17 49 pd save;
-#N canvas 516 721 544 359 wait 0;
+#N canvas 464 721 544 359 wait 0;
 #X obj 32 110 s toRemoteDirect;
 #X obj 172 28 r fromRemote;
 #X obj 32 33 r \$0-wait;
@@ -293,7 +295,7 @@
 #X connect 8 0 11 0;
 #X connect 10 0 4 0;
 #X restore 126 141 pd wait;
-#N canvas 430 199 582 337 insert/delete 0;
+#N canvas 378 199 582 337 insert/delete 0;
 #X obj 65 181 text insert Sequence;
 #X obj 38 12 r fromRemote;
 #X obj 38 35 route movement_insertbefore movement_insertafter movement_delete
