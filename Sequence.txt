@@ -1,11 +1,4 @@
-716 693 572 catch 1 1A: prendre caisse sur camion
-300 265 581 release 1 1B: poser la caisse sur le wagon voie2-rangée2
-635 495 500 catch 1 2A: prendre une caisse sur wagon voie3-rangée3
-716 693 625 release 1 2B: poser la caisse sur le camion
-530 535 554 catch 1 3A: prendre une caisse stockage1-rangée3
-800 310 554 release 1 3B: poser la caisse sur le wagon voie2-rangée4
-432 517 554 catch 1 4A: prendre une caisse sur le wagon voie3-rangée2
-643 653 554 release 1 4B: poser la caisse sur le stock1-rangée3
-643 798 554 catch 1 5A: prendre une caisse stock2-rangée3
-643 230 554 release 1 5B: poser la caisse sur le wagon voie2-rangée3
-0 0 0 catch 1 Fin: retourner au zéro
+923 100 413 catch 1 1A: prendre caisse sur camion
+1093 900 413 release 1 1B: poser la caisse sur le wagon voie2-rangée2
+1093 900 413 catch 1 2A: prendre une caisse sur wagon voie3-rangée3
+923 100 413 release 1 2B: poser la caisse sur le camion

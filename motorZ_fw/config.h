@@ -4,7 +4,7 @@
 #define ANALOG_FILTER 3 
 
 #define MOTC_END K3
-#define MOTC_ENDLEVEL 1
+#define MOTC_ENDLEVEL 0
 #define MOTC_NEAREND KZ0
 #define MOTC_HIEND K9
 #define MOTC_A K6

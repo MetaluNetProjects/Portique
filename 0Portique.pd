@@ -1,4 +1,4 @@
-#N canvas 72 364 375 323 12;
+#N canvas 51 420 375 323 12;
 #X declare -path Fraise;
 #X obj 11 9 declare -path Fraise;
 #X obj 11 143 pied/pied 0 34210;
@@ -15,6 +15,8 @@
 #X msg 46 111 1;
 #X obj 76 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 202 20 bng 80 250 50 0 MOTORS_STOP MOTORS_STOP STOP! 10 40 0
+20 -258113 -1 -1;
 #X connect 9 0 10 0;
 #X connect 9 0 11 0;
 #X connect 10 0 1 0;
