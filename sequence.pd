@@ -1,4 +1,4 @@
-#N canvas 270 82 1095 661 12;
+#N canvas 218 85 1095 661 12;
 #X obj 71 126 text define Sequence;
 #X msg 71 98 read -c Sequence.txt;
 #X obj 42 259 text get Sequence;
@@ -32,11 +32,11 @@
 #X obj 177 222 hradio 15 1 0 12 \$0-readStep \$0-readStep readStep
 0 -8 0 10 -262144 -1 -1 3;
 #X obj 45 509 hsl 500 15 0 2000 0 0 empty axisRampPosX X -14 7 0 10
--262144 -1 -1 23025 1;
+-262144 -1 -1 0 1;
 #X obj 45 526 hsl 500 15 0 800 0 0 empty axisRampPosY Y -14 7 0 10
--262144 -1 -1 6240 1;
+-262144 -1 -1 0 1;
 #X obj 45 543 hsl 500 15 0 800 0 0 empty axisRampPosZ Z -14 7 0 10
--262144 -1 -1 9357 1;
+-262144 -1 -1 0 1;
 #X obj 609 47 t b b;
 #X obj 609 72 i;
 #X msg 655 46 0;
@@ -68,7 +68,7 @@
 #X obj 437 133 / 1000;
 #X floatatom 437 158 5 0 0 0 - - -;
 #X obj 321 42 s SequencePlay;
-#X obj 695 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 695 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 627 174 r \$0-stepIsValid;
 #X obj 1079 336 XYgoto \$0;
@@ -113,7 +113,7 @@
 #X msg 78 110 1;
 #X msg 111 110 0;
 #X msg 39 165 1;
-#X obj 169 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 169 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X connect 1 0 2 0;
 #X connect 1 0 9 0;
@@ -157,13 +157,20 @@
 #X obj 609 527 wait \$0 __ 1;
 #X obj 609 425 wait \$0 __ 1;
 #X floatatom 303 439 5 0 0 0 - - -;
-#X obj 805 358 tgl 50 0 empty empty LOOP 17 -10 0 10 -4034 -1 -1 1
+#X obj 805 358 tgl 50 0 empty empty LOOP 17 -10 0 10 -4034 -1 -1 0
 1;
 #X obj 802 415 r SequenceFinished;
 #X obj 802 495 spigot;
 #X obj 802 519 s SequencePlay;
 #X obj 802 440 b;
 #X obj 802 467 del 10;
+#X obj 832 224 r SequenceFinished;
+#X obj 793 199 r SequencePlay;
+#X obj 869 250 r SequenceReset;
+#X msg 793 224 1;
+#X msg 832 249 0;
+#X obj 793 304 s SequencePlaying;
+#X obj 793 277 change;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;
 #X connect 3 0 5 0;
@@ -262,3 +269,9 @@
 #X connect 107 0 108 0;
 #X connect 109 0 110 0;
 #X connect 110 0 107 0;
+#X connect 111 0 115 0;
+#X connect 112 0 114 0;
+#X connect 113 0 115 0;
+#X connect 114 0 117 0;
+#X connect 115 0 117 0;
+#X connect 117 0 116 0;
