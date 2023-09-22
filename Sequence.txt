@@ -1,4 +1,4 @@
-923 100 413 catch 1 1A: prendre caisse sur camion
-1093 900 413 release 1 1B: poser la caisse sur le wagon voie2-rangée2
-1093 900 413 catch 1 2A: prendre une caisse sur wagon voie3-rangée3
-923 100 413 release 1 2B: poser la caisse sur le camion
+910 100 423 catch 1 1a prendre la caisse au sol
+410 486 299 release 1 2a poser sur caisse
+410 486 299 catch 1 2a poser sur caisse
+910 100 423 release 1 2b reposer au sol

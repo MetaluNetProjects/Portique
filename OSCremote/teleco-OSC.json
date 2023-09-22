@@ -1492,7 +1492,7 @@
                         "on": 1,
                         "off": 0,
                         "mode": "tap",
-                        "doubleTap": false,
+                        "doubleTap": true,
                         "value": "",
                         "default": "",
                         "linkId": "",
@@ -1701,7 +1701,7 @@
                     },
                     "rangeY": {
                       "min": 0,
-                      "max": 1700
+                      "max": 1500
                     },
                     "logScaleX": false,
                     "logScaleY": false,
@@ -1751,7 +1751,7 @@
                     },
                     "rangeY": {
                       "min": 0,
-                      "max": 1700
+                      "max": 1500
                     },
                     "logScaleX": false,
                     "logScaleY": false,
@@ -1800,7 +1800,7 @@
                     "spring": false,
                     "doubleTap": false,
                     "range": {
-                      "min": 800,
+                      "min": 430,
                       "max": 0
                     },
                     "logScale": false,
@@ -1850,7 +1850,7 @@
                     "spring": false,
                     "doubleTap": false,
                     "range": {
-                      "min": 800,
+                      "min": 430,
                       "max": 0
                     },
                     "logScale": false,
@@ -2612,7 +2612,7 @@
                     "doubleTap": false,
                     "range": {
                       "min": 0,
-                      "max": 350
+                      "max": 512
                     },
                     "logScale": false,
                     "sensitivity": 1,
@@ -3049,7 +3049,7 @@
             "spring": false,
             "doubleTap": false,
             "range": {
-              "min": 800,
+              "min": 430,
               "max": 0
             },
             "logScale": false,
@@ -3100,7 +3100,7 @@
             },
             "rangeY": {
               "min": 0,
-              "max": 1700
+              "max": 1500
             },
             "logScaleX": false,
             "logScaleY": false,

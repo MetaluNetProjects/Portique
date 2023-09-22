@@ -1,4 +1,4 @@
-#N canvas 218 85 1095 661 12;
+#N canvas 218 82 1095 661 12;
 #X obj 71 126 text define Sequence;
 #X msg 71 98 read -c Sequence.txt;
 #X obj 42 259 text get Sequence;
@@ -30,13 +30,13 @@
 #X obj 556 266 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 177 222 hradio 15 1 0 12 \$0-readStep \$0-readStep readStep
-0 -8 0 10 -262144 -1 -1 3;
+0 -8 0 10 -262144 -1 -1 2;
 #X obj 45 509 hsl 500 15 0 2000 0 0 empty axisRampPosX X -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 10229 1;
 #X obj 45 526 hsl 500 15 0 800 0 0 empty axisRampPosY Y -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 30316 1;
 #X obj 45 543 hsl 500 15 0 800 0 0 empty axisRampPosZ Z -14 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 7523 1;
 #X obj 609 47 t b b;
 #X obj 609 72 i;
 #X msg 655 46 0;
@@ -68,7 +68,7 @@
 #X obj 437 133 / 1000;
 #X floatatom 437 158 5 0 0 0 - - -;
 #X obj 321 42 s SequencePlay;
-#X obj 695 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 695 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 627 174 r \$0-stepIsValid;
 #X obj 1079 336 XYgoto \$0;
@@ -150,14 +150,11 @@
 #X obj 434 53 t b b;
 #X obj 485 82 t b b;
 #X obj 418 331 print;
-#X msg 884 73 150;
-#X obj 161 441 - 10;
 #X obj 161 467 s \$0-Z-10;
 #X obj 609 376 Zgoto \$0 Z-10;
 #X obj 609 527 wait \$0 __ 1;
-#X obj 609 425 wait \$0 __ 1;
 #X floatatom 303 439 5 0 0 0 - - -;
-#X obj 805 358 tgl 50 0 empty empty LOOP 17 -10 0 10 -4034 -1 -1 0
+#X obj 805 358 tgl 50 0 empty empty LOOP 17 -10 0 10 -4034 -1 -1 1
 1;
 #X obj 802 415 r SequenceFinished;
 #X obj 802 495 spigot;
@@ -171,6 +168,9 @@
 #X msg 832 249 0;
 #X obj 793 304 s SequencePlaying;
 #X obj 793 277 change;
+#X msg 884 73 50;
+#X obj 609 425 wait \$0 __ 4;
+#X obj 161 441 - 40;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;
 #X connect 3 0 5 0;
@@ -182,17 +182,17 @@
 #X connect 8 0 13 0;
 #X connect 8 1 14 0;
 #X connect 8 2 15 0;
-#X connect 8 2 99 0;
+#X connect 8 2 117 0;
 #X connect 8 3 16 0;
 #X connect 8 4 17 0;
-#X connect 8 4 104 0;
+#X connect 8 4 101 0;
 #X connect 10 1 81 0;
 #X connect 12 0 8 0;
 #X connect 12 1 10 0;
 #X connect 12 1 43 0;
 #X connect 18 0 2 0;
-#X connect 19 0 101 0;
-#X connect 20 0 102 0;
+#X connect 19 0 99 0;
+#X connect 20 0 100 0;
 #X connect 21 0 70 0;
 #X connect 22 0 23 0;
 #X connect 24 0 25 0;
@@ -227,7 +227,7 @@
 #X connect 56 0 59 0;
 #X connect 57 0 63 0;
 #X connect 58 0 62 0;
-#X connect 60 0 98 0;
+#X connect 60 0 115 0;
 #X connect 60 0 67 0;
 #X connect 62 0 68 0;
 #X connect 62 0 74 0;
@@ -258,20 +258,20 @@
 #X connect 95 1 94 0;
 #X connect 96 0 88 0;
 #X connect 96 1 48 1;
-#X connect 98 0 61 0;
-#X connect 99 0 100 0;
-#X connect 101 0 103 0;
-#X connect 102 0 79 0;
-#X connect 102 0 78 0;
-#X connect 103 0 20 0;
-#X connect 105 0 107 1;
-#X connect 106 0 109 0;
-#X connect 107 0 108 0;
-#X connect 109 0 110 0;
-#X connect 110 0 107 0;
-#X connect 111 0 115 0;
+#X connect 99 0 116 0;
+#X connect 100 0 79 0;
+#X connect 100 0 78 0;
+#X connect 102 0 104 1;
+#X connect 103 0 106 0;
+#X connect 104 0 105 0;
+#X connect 106 0 107 0;
+#X connect 107 0 104 0;
+#X connect 108 0 112 0;
+#X connect 109 0 111 0;
+#X connect 110 0 112 0;
+#X connect 111 0 114 0;
 #X connect 112 0 114 0;
-#X connect 113 0 115 0;
-#X connect 114 0 117 0;
-#X connect 115 0 117 0;
-#X connect 117 0 116 0;
+#X connect 114 0 113 0;
+#X connect 115 0 61 0;
+#X connect 116 0 20 0;
+#X connect 117 0 98 0;
